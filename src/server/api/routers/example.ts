@@ -10,18 +10,17 @@ export const exampleRouter = createTRPCRouter({
   hello: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(async ({ input }) => {
-      const idk = await db
-        .selectFrom("User")
-        .selectAll()
-        // .where("User.id", "=", "1")
-        .execute();
+      // const idk = await db
+      //   .selectFrom("User")
+      //   .selectAll()
+      //   // .where("User.id", "=", "1")
+      //   .execute();
 
-      console.log(idk, "idk");
-      console.log(process.env.DATABASE_URL, "DATABASE_URL");
+      // console.log(idk, "idk");
 
       return {
         greeting: `Hello ${input.text}`,
-        idk,
+        // idk,
       };
     }),
 
