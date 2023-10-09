@@ -1,5 +1,6 @@
 import { supabase } from "@/server/db";
 import { api } from "@/utils/api";
+import { Button } from "@mantine/core";
 
 export default function Home() {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -28,6 +29,9 @@ export default function Home() {
     <div>
       <div>{hello.data?.greeting}</div>
       <button onClick={signInWithEmail}>sign in</button>
+      <Button variant="outline" color="orange" size="md" radius="xl">
+        Button
+      </Button>
     </div>
   );
 }
